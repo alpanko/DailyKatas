@@ -1,0 +1,12 @@
+The brief : 
+
+A games company is developing a sports event simulator, to be built in iterations starting with simple requirements and building up to increase the complexity. 
+The system design should allow for changes to be made by extending the existing system without changing what is already in place.
+
+1 - The simulator must support marathon and 10 km run events. The only requirement for these events is that the competitors can be displayed in some way 
+(text is fine) and they can compete in the event. All competitors will compete by running.
+
+2 - After running some events they proved to be totally chaotic so each event should now include a marshal. The marshal can also be displayed but does not compete in events.
+
+3 - Since the glorious victory of team GB in the Olympic Triathlon the sport’s popularity has increased. So the games company would now like to also support triathlon events. 
+Again competitors must be displayed and be able to compete, however a triathlon competitor will compete by swimming, cycling and running.
