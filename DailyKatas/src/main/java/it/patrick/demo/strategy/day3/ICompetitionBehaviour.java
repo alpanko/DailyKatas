@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.patrick.demo.strategy.day2;
+package it.patrick.demo.strategy.day3;
 
 /**
  *
  * @author patrickn
  */
-public class CanSwim implements IcompeBehaviour{
-
-    @Override
-    public String compete() {
-       return "I'm swimming , i'm usain Ian Thorpe";
-    }
+interface ICompetitionBehaviour {
+    
+    public void compete();
     
 }
