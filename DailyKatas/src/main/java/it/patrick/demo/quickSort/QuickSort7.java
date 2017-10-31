@@ -9,9 +9,9 @@ package it.patrick.demo.quickSort;
  *
  * @author patrickn
  */
-public class QuickSort6 {
+public class QuickSort7 {
 
-    public void sort(int[] array) {
+    public void sort(int array[]) {
 
         quickSort(array, 0, array.length - 1);
 
@@ -21,17 +21,19 @@ public class QuickSort6 {
         int i = low;
         int j = high;
         int pivot = array[low + (high - low) / 2];
+
         while (i <= j) {
 
             while (array[i] < pivot) {
                 i++;
+
             }
 
             while (array[j] > pivot) {
-
                 j--;
 
             }
+            
             if(i<=j){
                 int temp = array[i];
                 array[i] = array[j];
@@ -41,14 +43,11 @@ public class QuickSort6 {
             }
 
         }
-        
         if(low<j)
             quickSort(array, low, j);
-        
-        if(i<high)
+        if(i<high){
             quickSort(array, i, high);
-        
-       
+        }
     }
 
 }
