@@ -14,21 +14,21 @@ public class MergeSort {
         mergeSort(array, 0, array.length-1);
     }
     
-    private void merge(int arr[], int l, int m, int r)
+    private void merge(int[] arrayToSort, int posFirst, int middlePoint, int posLast)
     {
         // Find sizes of two subarrays to be merged
-        int n1 = m - l + 1;
-        int n2 = r - m;
+        int sizeOfLeftArray = middlePoint - posFirst + 1;
+        int sizedOfRightArray = posLast - middlePoint;
  
         /* Create temp arrays */
-        int L[] = new int [n1];
-        int R[] = new int [n2];
+        int leftArray[] = new int [sizeOfLeftArray];
+        int rigthArray[] = new int [sizedOfRightArray];
  
         /*Copy data to temp arrays*/
-        for (int i=0; i<n1; ++i)
-            L[i] = arr[l + i];
-        for (int j=0; j<n2; ++j)
-            R[j] = arr[m + 1+ j];
+        for (int i=0; i<sizeOfLeftArray; ++i)
+            leftArray[i] = arrayToSort[posFirst + i];
+        for (int j=0; j<sizedOfRightArray; ++j)
+            rigthArray[j] = arrayToSort[middlePoint + 1+ j];
  
  
         /* Merge the temp arrays */
@@ -37,34 +37,34 @@ public class MergeSort {
         int i = 0, j = 0;
  
         // Initial index of merged subarry array
-        int k = l;
-        while (i < n1 && j < n2)
+        int k = posFirst;
+        while (i < sizeOfLeftArray && j < sizedOfRightArray)
         {
-            if (L[i] <= R[j])
+            if (leftArray[i] <= rigthArray[j])
             {
-                arr[k] = L[i];
+                arrayToSort[k] = leftArray[i];
                 i++;
             }
             else
             {
-                arr[k] = R[j];
+                arrayToSort[k] = rigthArray[j];
                 j++;
             }
             k++;
         }
  
         /* Copy remaining elements of L[] if any */
-        while (i < n1)
+        while (i < sizeOfLeftArray)
         {
-            arr[k] = L[i];
+            arrayToSort[k] = leftArray[i];
             i++;
             k++;
         }
  
         /* Copy remaining elements of R[] if any */
-        while (j < n2)
+        while (j < sizedOfRightArray)
         {
-            arr[k] = R[j];
+            arrayToSort[k] = rigthArray[j];
             j++;
             k++;
         }
@@ -72,19 +72,19 @@ public class MergeSort {
  
     // Main function that sorts arr[l..r] using
     // merge()
-    private void mergeSort(int arr[], int l, int r)
+    private void mergeSort(int arr[], int posFirst, int postLast)
     {
-        if (l < r)
+        if (posFirst < postLast)
         {
             // Find the middle point
-            int m = (l+r)/2;
+            int middlePoint = (posFirst+postLast)/2;
  
             // Sort first and second halves
-            mergeSort(arr, l, m);
-            mergeSort(arr , m+1, r);
+            mergeSort(arr, posFirst, middlePoint);
+            mergeSort(arr , middlePoint+1, postLast);
  
             // Merge the sorted halves
-            merge(arr, l, m, r);
+            merge(arr, posFirst, middlePoint, postLast);
         }
     }
  
