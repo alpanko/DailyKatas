@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.patrick.demo.factory.proxy;
+package it.patrick.demo.proxy;
 
 /**
  *
@@ -23,7 +23,7 @@ public class RealImage implements Image{
         System.out.println("Displaying " + fileName);
     }
 
-    private void loadFronDisk(String fileName) {
+    public void loadFronDisk(String fileName) {
         System.out.println("Loading " + fileName);
     }
     

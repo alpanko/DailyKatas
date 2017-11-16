@@ -3,13 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package it.patrick.demo.factory.proxy;
+package it.patrick.demo.proxy.day2;
 
 /**
  *
  * @author patrickn
  */
-public interface Image {
-    void display();
+public class ProxyDemo {
+    
+    public static void main(String[] args) {
+        Image proxyImage = new ProxyImage("fake image");
+        proxyImage.display();
+    }
     
 }
